@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grow with Rafi</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins, sans-serif;
+    scroll-behavior:smooth;
+}
+body{
+    background:#0a192f;
+    color:white;
+}
+header{
+    background:#112240;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#64ffda;
+}
+nav a{
+    text-decoration:none;
+    color:#ccd6f6;
+    margin-left:20px;
+    font-size:15px;
+}
+nav a:hover{
+    color:#64ffda;
+}
+
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 0 100 100'%3E%3Ctext x='0' y='15' font-size='12' fill='%23112440'%3ECSE%3C/text%3E%3C/svg%3E");
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+.hero h1{
+    font-size:40px;
+    color:#64ffda;
+}
+.hero p{
+    margin-top:10px;
+    font-size:17px;
+    color:#ccd6f6;
+}
+.hero button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    background:#64ffda;
+    color:#0a192f;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+}
+.hero button:hover{
+    background:white;
+}
+
+section{
+    padding:100px 40px 40px 40px;
+}
+.section-title{
+    font-size:28px;
+    color:#64ffda;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.about, .skills, .hire{
+    background:#112240;
+    margin-top:20px;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.learn-card{
+    background:#0a192f;
+    padding:20px;
+    border-radius:8px;
+    margin:15px 0;
+    border-left:4px solid #64ffda;
+}
+.learn-card h3{
+    color:#64ffda;
+}
+.learn-card p{
+    margin-top:6px;
+    font-size:14px;
+    color:#ccd6f6;
+}
+
+/* Modal */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+.modal-content{
+    background:#112240;
+    padding:25px;
+    width:100%;
+    max-width:400px;
+    border-radius:8px;
+    animation:pop 0.3s ease;
+}
+@keyframes pop{
+    from{transform:scale(0.7);}
+    to{transform:scale(1);}
+}
+.modal-content h2{
+    color:#64ffda;
+    margin-bottom:15px;
+}
+.modal-content input, .modal-content textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:5px;
+    background:#ccd6f6;
+    color:#0a192f;
+}
+.modal-content button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+    background:#64ffda;
+    color:#0a192f;
+    font-weight:600;
+    cursor:pointer;
+}
+.modal-content button:hover{
+    background:white;
+}
+.close{
+    float:right;
+    font-size:20px;
+    cursor:pointer;
+    color:#ccd6f6;
+}
+.close:hover{
+    color:red;
+}
+footer{
+    text-align:center;
+    padding:15px;
+    background:#112240;
+    margin-top:20px;
+    color:#64ffda;
+    font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Grow with Rafi</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#learning">Learning</a>
+        <a href="#hire">Hire Me</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Grow with Rafi</h1>
+    <p>CSE Student — TMSS Engineering College, Bogura</p>
+    <button onclick="openHire()">Hire Me</button>
+</div>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+        <p>Hello! I'm <b>Rafi</b>, a Computer Science student at <b>TMSS Engineering College, Bogura</b>.  
+        I love programming and I'm continuously growing my skills to become a professional software developer.</p>
+    </div>
+</section>
+
+<section id="learning">
+    <h2 class="section-title">Learning Programming</h2>
+
+    <div class="learn-card">
+        <h3>Web Development</h3>
+        <p>Learning modern HTML, CSS, JavaScript, responsive UI, and interactive websites.</p>
+    </div>
+
+    <div class="learn-card">
+        <h3>C++ & DSA</h3>
+        <p>Practicing Data Structures & Algorithms using C++ for problem solving.</p>
+    </div>
+
+    <div class="learn-card">
+        <h3>Python</h3>
+        <p>Learning Python for automation, OOP, and backend development.</p>
+    </div>
+
+</section>
+
+<section id="hire">
+    <h2 class="section-title">Hire Me</h2>
+    <div class="hire">
+        <p>If you want a programmer to build your project or website, feel free to contact me.</p>
+        <button onclick="openHire()">Open Hire Form</button>
+    </div>
+</section>
+
+<div class="modal" id="hireModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeHire()">&times;</span>
+        <h2>Hire Me</h2>
+        <input type="text" placeholder="Your Name"/>
+        <input type="email" placeholder="Your Email"/>
+        <textarea rows="4" placeholder="Project Details"></textarea>
+        <button onclick="alert('Request Sent!')">Send Request</button>
+    </div>
+</div>
+
+<footer>© 2026 — Grow with Rafi | Built by Al Arafat Rafi</footer>
+
+<script>
+function openHire(){
+    document.getElementById("hireModal").style.display="flex";
+}
+function closeHire(){
+    document.getElementById("hireModal").style.display="none";
+}
+</script>
+
+</body>
+</html>
